@@ -1,0 +1,33 @@
+<div class="container" *ngIf="stockData">
+
+  <div class="header">
+    <h2>{{ stockData.companyData.description }}</h2>
+    <h2>({{ stockData.companyData.displaySymbol }})</h2>
+    <div class="delete" (click)="onDelete()" [id]="'remove' + stockData.companyData.displaySymbol">
+      &#215;
+    </div>
+  </div>
+  <div class="content">
+    <div class="details">
+      <span> <b>Change Today:</b> {{ stockData.value.change }}%</span>
+      <span>
+        <b>Opening Price:</b> ${{ stockData.value.openPrice }}</span>
+    </div>
+    <div class="detail-content">
+      <span> <b>Current Price:</b> ${{ stockData.value.currentPrice }}</span>
+      <span> <b>High Price:</b> ${{ stockData.value.highPrice }}</span>
+    </div>
+    <div class="arrowUp" *ngIf="stockData.value.precentChange > 0">
+      &#8593;
+    </div>
+    <div class="arrowZero" *ngIf="stockData.value.precentChange === 0">
+      &#8646;
+    </div>
+    <div class="arrowDown" *ngIf="stockData.value.precentChange < 0">
+      &#8595;
+    </div>
+  </div>
+  <a style="text-align:right" (click)="moveToSentimentPage()" [id]="'sentiment' + stockData.companyData.displaySymbol" class="sentimentLink">
+    <span>See Sentiment Details</span>
+  </a>
+</div>

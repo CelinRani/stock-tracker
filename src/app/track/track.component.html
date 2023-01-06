@@ -1,0 +1,24 @@
+<body>
+    <div class="container">
+        <div class="search-content">
+            <form #tempRef="ngForm" (ngSubmit)="onTrack()">
+                <h1 class="title">STOCK TRACKER</h1>
+                <p> Enter the symbol of a stock to track <span class="gray-span">(i.e. TSLA, GOOGL)</span> </p>
+                <input type="text" id="stockInput" [(ngModel)]="inputVal" name="input" minlength="1" maxlength="5" required />
+                <button id="trackBtn" type="submit" [disabled]="!tempRef.valid"
+                [ngClass]="inputVal?'activeBtn':'disableBtn'">
+                    TRACK IT!
+                </button>
+                <div class="errorMessage">
+                    <div class="error" *ngIf="emptyData">
+                        Please,Try again with valid Symbol
+                    </div>
+                    <div class="error" *ngIf="duplicateVal">Symbol Already exists</div>
+                </div>
+            </form>
+        </div>
+        <div *ngFor="let stock of stockArray">
+            <app-stock-card (deleteClick)="onDelete($event)" [stockData]="stock"></app-stock-card>
+        </div>
+    </div>
+</body>

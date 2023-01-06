@@ -1,0 +1,36 @@
+<body>
+    <div class="center-content">
+        <div class="container">
+            <h2 class="header">{{companyName}}
+                <span>({{ symbol }})</span>
+            </h2>
+            <div class="details-content">
+                <div class="detailsItem" *ngFor="let item of stockItems">
+                    <div *ngIf="item; else noData" class="detailItem-info ">
+                        <span><b>{{ item.month | monthName }}</b></span>
+                        <span><b>Change:</b> {{ item.change }}</span>
+                        <span><b>MSPR:</b> {{ item.mspr }}</span>
+                    </div>
+                    <ng-template #noData>
+                        <div>Empty..</div>
+                    </ng-template>
+                    <div class="arrowUp" *ngIf="item.mspr > 0">&#8593;</div>
+                    <div class="arrowZero" *ngIf="item.mspr === 0">&#8646;</div>
+                    <div class="arrowDown" *ngIf="item.mspr < 0">&#8595;</div>
+                </div>
+                <div *ngIf="!stockItems || stockItems.length === 0">
+                    <h3>Loading ...</h3>        
+                </div>
+            </div>
+
+
+        </div>
+        <div class="link">
+            <a id="backBtn" (click)="onBack()" class="back-link">
+                <div class="back-icon">
+                    <mat-icon>arrow_back</mat-icon> <span>Back to Stock Lists</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
