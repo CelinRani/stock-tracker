@@ -1,6 +1,16 @@
-body{
+body {
     background-color: aliceblue;
 }
+
+a {
+    color: #0606be;
+    cursor: pointer;
+}
+
+h2 {
+    color: rgb(0, 0, 117)
+}
+
 .center-content {
     display: flex;
     justify-content: center;
@@ -38,32 +48,13 @@ body{
     padding: 5px;
 }
 
-.arrowDown {
-    font-size: 50px;
-    color: red;
-    margin-top: -5px;
-}
-
-.arrowUp {
-    font-size: 50px;
-    color: green;
-    margin-top: -5px;
-}
-
-.arrowZero {
-    font-size: 50px;
-    color: grey;
-    margin-top: -5px;
-}
-
-
 .back-link {
     margin-top: 15px;
 }
 
 .header {
     margin-top: 0;
-    padding:10px;
+    padding: 10px;
     margin-bottom: 0;
 }
 
@@ -75,11 +66,21 @@ body{
     margin-top: 25px;
 }
 
-a {
-    color: #0606be;
-    cursor: pointer;
+.up-Img {
+    width: 140px;
+    padding: 4px;
+    margin-top: -13px;
+    height: 110px;
 }
 
-h2 {
-    color: rgb(0, 0, 117)
+.down-Img {
+    width: 122px;
+    height: 90px;
+}
+
+.equal-Img {
+    width: 140px;
+    margin-left: 12px;
+    height: 118px;
+    margin-right: 15px;
 }

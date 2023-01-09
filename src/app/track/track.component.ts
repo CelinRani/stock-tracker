@@ -10,16 +10,16 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './track.component.html',
   styleUrls: ['./track.component.css']
 })
-export class TrackComponent implements OnInit ,OnDestroy{
+export class TrackComponent implements OnInit, OnDestroy {
   inputVal: string = '';
   emptyData: boolean = false;
   duplicateVal: boolean = false;
-  isDelete : boolean = false;
+  isDelete: boolean = false;
 
   stockArray: StockData[] | undefined;
 
   private localStorageKey = 'StockData';
-  constructor(private stockDataService: StockDataService, private aRoute : ActivatedRoute) { }
+  constructor(private stockDataService: StockDataService, private aRoute: ActivatedRoute) { }
 
   @HostListener('window:beforeunload', ['$event'])
   unloadHandler(event: Event) {
@@ -31,9 +31,9 @@ export class TrackComponent implements OnInit ,OnDestroy{
     if (localStorageItems) {
       this.stockArray = JSON.parse(localStorageItems);
     }
-   
+
   }
- 
+
   ngOnDestroy(): void {
     this.saveData();
   }
@@ -51,11 +51,11 @@ export class TrackComponent implements OnInit ,OnDestroy{
       this.emptyData = false;
       this.duplicateVal = false;
       if (!this.isDuplicateVal()) {
-      this.searchSymbol();
+        this.searchSymbol();
       } else {
         this.duplicateVal = true;
       }
-      this.inputVal=''
+      this.inputVal = ''
     }
   }
 

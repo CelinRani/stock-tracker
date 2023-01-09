@@ -1,10 +1,11 @@
 <div class="container" *ngIf="stockData">
 
   <div class="header">
-    <h2>{{ stockData.companyData.description }}</h2>
-    <h2>({{ stockData.companyData.displaySymbol }})</h2>
+
+    <h2 class="symbl">{{ stockData.companyData.displaySymbol }}</h2>
+    <h2 class="symblData">{{ stockData.companyData.description }}</h2>
     <div class="delete" (click)="onDelete()" [id]="'remove' + stockData.companyData.displaySymbol">
-      &#215;
+      <mat-icon>clear</mat-icon>
     </div>
   </div>
   <div class="content">
@@ -18,16 +19,17 @@
       <span> <b>High Price:</b> ${{ stockData.value.highPrice }}</span>
     </div>
     <div class="arrowUp" *ngIf="stockData.value.precentChange > 0">
-      &#8593;
+      <img src="../../assets/upGreenImage.jpg" alt="Upward Arrow Icon" class="up-Img">
     </div>
     <div class="arrowZero" *ngIf="stockData.value.precentChange === 0">
-      &#8646;
+      <img src="../../assets/equalImage.jpg" alt="Equal Arrow Icon" class="equal-Img">
     </div>
     <div class="arrowDown" *ngIf="stockData.value.precentChange < 0">
-      &#8595;
+      <img src="../../assets/downRedImage.jpg" alt="Downward Arrow Icon" class="down-Img">
     </div>
   </div>
-  <a style="text-align:right" (click)="moveToSentimentPage()" [id]="'sentiment' + stockData.companyData.displaySymbol" class="sentimentLink">
+  <a style="text-align:right" (click)="moveToSentimentPage()" [id]="'sentiment' + stockData.companyData.displaySymbol"
+    class="sentimentLink">
     <span>See Sentiment Details</span>
   </a>
 </div>
