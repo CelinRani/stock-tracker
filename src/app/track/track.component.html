@@ -4,9 +4,10 @@
             <form #tempRef="ngForm" (ngSubmit)="onTrack()">
                 <h1 class="title">STOCK TRACKER</h1>
                 <p> Enter the symbol of a stock to track <span class="gray-span">(i.e. TSLA, GOOGL)</span> </p>
-                <input type="text" id="stockInput" [(ngModel)]="inputVal" name="input" minlength="1" maxlength="5" required />
+                <input type="text" id="stockInput" [(ngModel)]="inputVal" name="input" minlength="1" maxlength="5"
+                    required />
                 <button id="trackBtn" type="submit" [disabled]="!tempRef.valid"
-                [ngClass]="inputVal?'activeBtn':'disableBtn'">
+                    [ngClass]="inputVal?'activeBtn':'disableBtn'">
                     TRACK IT!
                 </button>
                 <div class="errorMessage">

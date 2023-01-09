@@ -15,18 +15,15 @@
                         <div>Empty..</div>
                     </ng-template>
                     <div class="arrowUp" *ngIf="item.mspr > 0">
-                        <!-- &#8593; -->
                         <img src="../../assets/upGreenImage.jpg" alt="Upward Arrow Icon" class="up-Img">
 
                     </div>
                     <div class="arrowZero" *ngIf="item.mspr === 0">
-                        <!-- &#8646; -->
-                        <img src="../../assets/equalImage.jpg" alt="Upward Arrow Icon" class="equal-Img">
+                        <img src="../../assets/equalImage.jpg" alt="Equal Arrow Icon" class="equal-Img">
 
                     </div>
                     <div class="arrowDown" *ngIf="item.mspr < 0">
-                        <!-- &#8595; -->
-                        <img src="../../assets/downRedImage.jpg" alt="Upward Arrow Icon" class="down-Img">
+                        <img src="../../assets/downRedImage.jpg" alt="Downward Arrow Icon" class="down-Img">
 
                     </div>
                 </div>
@@ -34,8 +31,6 @@
                     <h3>No Data!</h3>
                 </div>
             </div>
-
-
         </div>
         <div class="link">
             <a id="backBtn" (click)="onBack()" class="back-link">

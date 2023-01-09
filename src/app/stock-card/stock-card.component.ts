@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class StockCardComponent implements OnInit {
   @Input() public stockData: StockData | undefined;
   @Output() public deleteClick: EventEmitter<string> = new EventEmitter();
-  private localStorageKey = 'StockData';
+  
   constructor(private router: Router) { }
 
   ngOnInit() {}

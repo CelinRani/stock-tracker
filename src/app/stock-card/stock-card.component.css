@@ -45,24 +45,6 @@
   margin-left: 30px;
 }
 
-.arrowDown {
-  font-size: 50px;
-  color: red;
-  margin-top: -15px;
-  margin-left: 30px;
-}
-
-.arrowUp {
-  font-size: 50px;
-  color: green;
-  margin-top: -15px;
-}
-
-.arrowZero {
-  font-size: 50px;
-  color: grey;
-  margin-top: -15px;
-}
 
 a {
   color: #0606be;
@@ -102,4 +84,9 @@ a span {
   margin-left: 15px;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.symblData {
+  margin-left: -90px;
+  margin-bottom: 0;
 }
